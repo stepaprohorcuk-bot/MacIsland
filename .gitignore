@@ -1,0 +1,6 @@
+MacIsland.app/
+*.dSYM/
+.DS_Store
+.build/
+*.zip
+*.iconset/

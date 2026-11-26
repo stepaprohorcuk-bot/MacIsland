@@ -1,0 +1,3 @@
+"NSMicrophoneUsageDescription" = "MacIsland слушает голосовые вопросы и команды музыке «дальше», «назад», «пауза».";
+"NSSpeechRecognitionUsageDescription" = "MacIsland распознаёт голосовые команды и вопросы.";
+"NSAppleEventsUsageDescription" = "MacIsland управляет Spotify и Музыкой, когда системные кнопки занял другой плеер (например, видео на паузе).";
