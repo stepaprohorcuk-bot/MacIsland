@@ -76,9 +76,12 @@ enum ReadmeShots {
 
         // 6. Smart Clipboard
         let cb = ClipboardStore.shared
-        cb.debugAdd(text: "Hello, how are you?")
         cb.debugAdd(text: "https://github.com/")
         cb.debugAdd(text: "Meeting notes: ship v0.1 on Friday, collect feedback, then plan plugins.")
+        cb.debugAdd(text: "¿A qué hora sale el próximo tren a Oporto?")
+        if let id = cb.texts.first?.id {
+            Translator.shared.debugSet(result: "What time does the next train to Porto leave?", for: id)
+        }
         if let png = fakeScreenshot() { cb.debugAdd(image: png, screenshot: true) }
         state.showClipboard = true
         shot(state, name: "clipboard", height: 760, to: out)

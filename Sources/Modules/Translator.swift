@@ -19,6 +19,9 @@ final class Translator: ObservableObject {
     @Published private(set) var results: [UUID: String] = [:]
     @Published private(set) var busy: Set<UUID> = []
     @Published private(set) var errors: [UUID: String] = [:]
+
+    /// Для снимков README: готовый перевод элемента буфера.
+    func debugSet(result: String, for id: UUID) { results[id] = result }
     /// TranslationSession.Configuration (хранится как Any, чтобы класс собирался и на macOS 14).
     @Published fileprivate(set) var islandConfig: Any?
     @Published fileprivate(set) var setupConfig: Any?

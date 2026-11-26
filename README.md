@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>A Dynamic Island for the MacBook notch.</b><br>
-  Music, timers, notifications, a smart clipboard, widgets and voice control — right where the camera is.
+  Music, timers, notifications, a smart clipboard with translation, widgets and voice control — right where the camera is.
 </p>
 
 <p align="center">
@@ -37,7 +37,8 @@ It is a native Swift/SwiftUI app with no dependencies — it builds with just th
   - [Voice commands](#voice-commands)
   - [Timers and Pomodoro](#timers-and-pomodoro)
   - [Notifications](#notifications)
-  - [Smart Clipboard and translation](#smart-clipboard-and-translation)
+  - [Smart Clipboard](#smart-clipboard)
+  - [Translate copied text](#translate-copied-text)
   - [Widgets](#widgets)
   - [The “Ask” field](#the-ask-field)
   - [Settings](#settings)
@@ -122,20 +123,36 @@ Recent banners from Telegram, Mail, Messages and other apps are collected in the
 open the app they came from, or clear them. macOS has no official API for this, so MacIsland reads the
 system banners through Accessibility; this is optional and off by default.
 
-### Smart Clipboard and translation
+### Smart Clipboard
 
 <p align="center">
-  <img src="docs/screenshots/clipboard.png" width="720" alt="Clipboard history with a screenshot thumbnail and text items">
+  <img src="docs/screenshots/clipboard.png" width="720" alt="Clipboard history: a screenshot thumbnail, a Spanish sentence with its English translation, and other copied text">
 </p>
 
 The island becomes a temporary workspace between apps:
 
 - **Screenshots in one place.** New screenshots appear as thumbnails — drag them straight into Telegram, a browser or an editor.
-- **Text history.** Copied snippets are kept as separate items: click to copy again, translate, pin or delete.
-- **Translate from the clipboard.** One click shows the translation right in the island, ready to copy.
-  It uses the translator built into macOS (15+): free, and works offline once the languages are downloaded.
+- **Text history.** Copied snippets are kept as separate items: click to copy again, drag into any app, pin or delete.
+- **Translation of anything you copied** — see below.
 - **Limits you control** — 10 texts and 5 images by default. The oldest unpinned items go first.
 - **Private by design.** Everything is stored only on this Mac; passwords copied from password managers are never saved.
+
+### Translate copied text
+
+Reading something in a foreign language? Copy it, and translate it without leaving the app you're in:
+
+1. Copy the text as usual (<kbd>⌘ C</kbd>).
+2. Open the island and press **Clipboard**.
+3. Hover the copied item and click the **translate** button next to it (a speech bubble with an “A”).
+4. The translation appears right under the original — click the copy button to put it on the clipboard.
+   Click translate again to hide it.
+
+- **Language is picked automatically:** text is translated into your system language, and text that's
+  already in your language is translated into English. You can choose a fixed target language in
+  **Settings → Clipboard & Translation**.
+- **Free and offline.** MacIsland uses the translator built into macOS 15+: each language pair downloads
+  once (macOS asks the first time), then works without the internet. Nothing is sent to third-party services.
+- On macOS 14, the text opens in Google Translate in your browser instead.
 
 ### Widgets
 
@@ -303,8 +320,11 @@ Ideas and bug reports are welcome in [Issues](../../issues).
   «включи музыку», «выключи музыку». Распознавание — на самом Mac.
 - **Таймеры, секундомер и Pomodoro** с анимированным аквариумом.
 - **Уведомления**, **батарея**, **загрузки**, индикатор **микрофона и камеры**.
-- **Умный буфер обмена:** скриншоты миниатюрами (перетаскиваются в любое приложение), история текста,
-  закрепление и **перевод** прямо в острове.
+- **Умный буфер обмена:** скриншоты миниатюрами (перетаскиваются в любое приложение), история текста
+  и закрепление.
+- **Перевод скопированного текста:** скопируй текст, открой «Буфер» в острове и нажми кнопку перевода рядом
+  с ним — перевод появится прямо под оригиналом, его можно скопировать. Работает через встроенный переводчик
+  macOS (15+), бесплатно и без интернета после загрузки языков.
 - **Виджеты:** погода, мониторинг системы, заметки и задачи.
 - **Поле «Спросить»:** калькулятор, таймеры, быстрый запуск программ и вопросы нейросети (Apple Intelligence
   или свой ключ API: OpenRouter, OpenAI, Groq, Ollama).
